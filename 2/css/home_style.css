@@ -1,0 +1,313 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  color: white; 
+  scroll-behavior: smooth;}
+
+body {
+  background-color: #f2f3f5;
+  font-family: ans-serif;
+  font-size: 15px;
+  color: #000206; }
+
+/* Headers */
+h1, h2, h3 {
+  padding: 20px 0;
+  font-family: New Tegomin;
+  font-weight: bold;
+  color: #021027; }
+
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: normal; }
+
+p {
+  padding: 10px 0;
+  text-indent: 30px; }
+
+/* Navigacia */
+nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-family: New Tegomin;
+  font-weight: bold;
+  background-color: #000814;
+  background-image: radial-gradient(#021027 0%, #021027 50%, transparent 80%, transparent); }
+  nav a {
+    display: block;
+    padding: 14px 16px;
+    z-index: 10;
+    color: #88e7f8; }
+  nav #logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 50px;
+    display: block; }
+  nav #nadpis {
+    margin-left: 60px;
+    line-height: 100%;
+    font-size: 20px; }
+  nav a.navIcon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #88e7f8;
+    color: #021027; }
+  nav #navLinks {
+    display: none; }
+    nav #navLinks a {
+      text-align: center; }
+    nav #navLinks a:hover {
+      background-color: #88e7f8;
+      color: #021027; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+hr {
+  margin: 40px 0;
+  height: 1px;
+  border: none;
+  background-color: grey; }
+
+/* Citacie */
+blockquote {
+  quotes: "„" "“" "‚" "‘";
+  text-transform: uppercase;
+  font-family: Proxima Nova, Atrament; }
+
+figcaption {
+  font-weight: bold; }
+
+/* Paticka */
+footer {
+  width: 100%;
+  padding: 0px;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  background-color: #000814;
+  background-image: radial-gradient(#021027 0%, #021027 50%, transparent 80%, transparent); }
+
+/* CLASSES */
+.family-container {
+  width: 100%;
+  margin-top: 100px;
+  padding-bottom: 30px;
+  background-color: #000814;
+  background-image: radial-gradient(#021027 0%, #021027 50%, transparent 80%, transparent); }
+  .family-container h1 {
+    color: #88e7f8; }
+  .family-container .family-member-container {
+    height: 154px;
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    border: 2px solid #f2f3f5;
+    text-align: center; }
+    .family-container .family-member-container img {
+      max-width: 150px;
+      max-height: 150px;
+      display: block;
+      float: left;
+      border-radius: 90px; }
+    .family-container .family-member-container div {
+      width: calc(100% - 150px);
+      height: 100%;
+      float: left;
+      padding: 13px;
+      color: #000206;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: #f2f3f5;
+      text-align: center; }
+
+.ul-content {
+  margin-left: 20px;
+  padding: 20px 0; }
+  .ul-content li {
+    text-decoration: underline; }
+
+/* Image quotes */
+.img-quote-container {
+  width: 100%;
+  max-height: 500px;
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  color: white; }
+  .img-quote-container img {
+    max-height: 500px;
+    width: 100%;
+    border-top: 10px solid #000814;
+    border-bottom: 10px solid #000814; }
+  .img-quote-container .img-quote-text {
+    padding: 10px;
+    background-color: #000814;
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    right: 0; }
+
+.content {
+  width: 90%;
+  margin: auto; }
+
+/* Grid wrapper */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(10px, auto); }
+
+/* Obsah */
+.box2 {
+  margin-top: 38px;
+  height: 100vh;
+  background-color: #000814;
+  background-image: radial-gradient(#021027 0%, #021027 50%, transparent 80%, transparent); }
+
+/* Quotes */
+.quote {
+  max-width: 90%;
+  margin: auto;
+  padding: 20px 0;
+  background-color: #f2f3f5;
+  text-align: center;
+  color: #000206;
+  background-image: radial-gradient(circle, white 10%, #000814);
+  border-radius: 5px; }
+
+/* Image center */
+.img-center {
+  max-height: 80%;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.img-in-text {
+  max-width: 100%;
+  max-height: 200px;
+  float: right; }
+
+.img-chris {
+  width: 200px;
+  float: right;
+  border-radius: 5px; }
+
+/* MEDIA QUERIES */
+@media only screen and (max-height: 550px) {
+  nav #nadpis {
+    display: none; } }
+/* Minimalna sirka okna 600px */
+@media only screen and (min-width: 600px) {
+  .content {
+    width: 80%; }
+
+  /* Grid wrapper */
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: minmax(10px, auto); }
+
+  .box1 {
+    grid-column: 1;
+    grid-row: 1; }
+
+  .box2 {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 0; }
+
+  .box3 {
+    grid-column: 2;
+    grid-row: 2; }
+
+  .box4 {
+    grid-column: 2;
+    grid-row: 3; }
+
+  .box5 {
+    grid-column: 2;
+    grid-row: 4; }
+
+  .box6 {
+    grid-column: 2;
+    grid-row: 5; }
+
+  /* Menu */
+  nav {
+    width: 25%;
+    height: 100%;
+    float: left; }
+    nav a {
+      display: block;
+      padding: 14px 16px;
+      z-index: 10; }
+    nav #logo {
+      position: static;
+      margin: auto;
+      width: 80%;
+      height: auto; }
+    nav #nadpis {
+      text-align: center;
+      margin-left: 0;
+      font-size: 2em; }
+    nav a.navIcon {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #88e7f8;
+      color: #021027; }
+    nav #navLinks {
+      display: block; }
+      nav #navLinks a {
+        font-size: 18px; }
+
+  .img-quote-container {
+    overflow: hidden; }
+    .img-quote-container .img-quote-text {
+      padding: 40px;
+      background-color: #000814;
+      opacity: 0.8;
+      position: absolute;
+      top: 35%;
+      right: 5%;
+      overflow: hidden; }
+
+  hr {
+    margin: 120px 0; } }
+/* Minimalna sirka okna 1200px */
+@media only screen and (min-width: 1200px) {
+  .family-container {
+    float: left; }
+    .family-container .family-member-container {
+      width: calc(50% - 20px);
+      margin-right: 20px;
+      float: left; }
+      .family-container .family-member-container div {
+        height: 150px;
+        padding: 20px; } }
+
+/*# sourceMappingURL=home_style.css.map */

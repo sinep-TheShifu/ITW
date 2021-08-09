@@ -1,0 +1,164 @@
+// Pre vsetky elementy 
+$dark_color: #021027;
+$light_color: #93f6fa;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: $dark_color;
+}
+
+// Nadpis 
+.headline {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  padding-top: 20px;
+  top: 0;
+  left: 0;
+
+  line-height: 37px;
+
+  color: $light_color;
+  font-family: Arial, Verdana, Helvetica;  
+  text-align: center;
+
+  h1 {
+    letter-spacing: 10px;
+    text-shadow: 1px 1px 2px white;
+  }
+
+  a {
+    width: 150px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;    
+    display: block;
+
+    border: 1px solid white;
+    border-radius: 2px;
+
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    color: inherit;
+  }
+  a:hover {
+    background-color: $light_color;
+    color: $dark_color;
+  }    
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+// Pozadie
+.background {
+    max-width: 100%;
+    height: auto;
+
+    display: block;
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    object-fit: fill;
+
+    mask-image: radial-gradient(
+    white 0%,
+    white 50%,
+    transparent 95%,
+    transparent
+  );
+}
+
+// Hlavny kontajner svetielka 
+.light-container {  
+  position: absolute;
+  animation-iteration-count: infinite;
+
+  // Svetielko 
+  .light {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;   
+
+    // Farba 
+    background-image: radial-gradient(
+      circle,
+      hsl(189, 100%, 80%),
+      hsl(189, 100%, 80%) 10%,
+      hsla(189, 100%, 50%, 0) 56%
+    );
+
+    // Proces animacie 
+    animation: scale-frames 3s infinite;
+
+    // Prechody animacie -> farby svetielka 
+    @keyframes scale-frames {
+      0% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
+
+      50% {
+        transform: scale3d(2.2, 2.2, 1);
+      }
+
+      100% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
+    }
+  }
+
+  // Prechadzanie jednotlivymi svetielkami 
+  @for $i from 1 through 100 {
+    // & je rodicovsky prvok -> v tomto pripade body 
+    &:nth-child(#{$i}) {
+      // Sirka kontajnera svetielka -> max 7px 
+      $circleSize: random(7); 
+      width: $circleSize + px;
+      height: $circleSize + px;
+
+      // Specifikacie animacie 
+      $frameName: "move-frames-" + $i;
+      animation-name: #{$frameName};
+      animation-duration: 28000 + random(9000) + ms;;
+      animation-delay: random(37000) + ms;
+
+      // Prechody animacie -> pozicie kontajnera svetielka 
+      @keyframes #{$frameName} {
+        from {
+          transform: translate3d(
+            #{random(95) + vw},
+            #{random(95) + vh},
+            0
+          );
+        }
+
+        to {
+          transform: translate3d(
+            #{random(95) + vw},
+            #{- 95 - random(30) + vh},
+            0
+          );
+        }
+      }
+    }
+  }
+}
+

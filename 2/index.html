@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Hlavicka -->
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/intro_page_style.css" type="text/css">
+        <link rel="shortcut icon" type="image/x-icon" href="pics/logo.png"/>
+        <title>Portfolio</title>
+    </head>
+    <!-- Telo -->
+    <body>
+        <!-- Pozadie -->
+        <div id="container" class="container">
+            <img src="pics/background.png" alt="Background Picture" class="background"> 
+        </div>
+
+        <!-- Nadpis -->
+        <div class="headline">
+            <a href="https://www.stud.fit.vutbr.cz/~xandra05/index.html"><h1 class="headerh1">GOD OF THUNDER REALM</h1></a>
+            <a href="home.html" class="enter">ENTER</a>
+        </div>  
+        
+        <!-- JavaScript -->
+        <script>
+            // Vytvorenie 100 elementov -> svetielka
+            for (var i = 0; i < 100; i++) {
+                var light_container = document.createElement("div")
+                light_container.className = "light-container";
+                var container = document.getElementById('container')
+                container.appendChild(light_container);
+
+                var light = document.createElement("div")
+                light.className = "light"
+                light_container.appendChild(light)
+            }
+        </script>
+    </body>
+</html>
+

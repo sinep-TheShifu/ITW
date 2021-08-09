@@ -1,0 +1,479 @@
+// TODO 
+// pridat cas scrollingu
+// pridat viacero fotiek do textu
+// pridat viacero img quotes
+// Napad - pridat nadpisom/hlavickam pozadie vo farbach stranky
+
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+$dark_color: #021027;
+$darker_color: #000814;
+$darkest_color: #000206;
+$light_color: #142d59;
+$lighter_color: #051a3e;
+$lightest_color: #88e7f8;
+$grey_background: #f2f3f5;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+body {
+	background-color: $grey_background;
+	font-family: ans-serif;
+	font-size: 15px;
+	color: $darkest_color;
+}
+
+/* Headers */
+h1, h2, h3 {
+	padding: 20px 0;
+	font-family: New Tegomin;
+	font-weight: bold;
+	color: $dark_color;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.2em;
+	text-align: center;
+	font-weight: normal;
+}
+
+p {
+	padding: 10px 0;
+	text-indent: 30px;
+}
+
+/* Navigacia */
+nav {
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+
+	font-family: New Tegomin;
+	font-weight: bold;
+
+	background-color: $darker_color;
+	background-image: radial-gradient(
+      $dark_color 0%,
+      $dark_color 50%,
+      transparent 80%,
+      transparent
+    );
+
+    // a element
+	a {
+		display: block;
+		padding: 14px 16px;
+		z-index: 10;
+
+		color: $lightest_color;
+	}
+
+	// Logo
+    #logo {
+    	position: absolute;
+    	left: 0;
+    	top: 0;
+    	width: 60px;
+    	height: 50px;
+    	display: block;
+    }
+
+    // Nadpis
+    #nadpis {
+    	margin-left: 60px;
+
+    	line-height: 100%;
+    	font-size: 20px;
+    }
+
+    // Menu
+    // Ikona
+    a.navIcon {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: $lightest_color;
+		color: $dark_color;
+	}
+
+	// Linky
+	#navLinks {
+		display: none;
+
+		a {
+			text-align: center;
+		}
+
+		a:hover {
+			background-color: $lightest_color;
+			color: $dark_color;
+		}
+	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+hr {
+	margin: 40px 0;
+	height: 1px;
+
+	border: none;
+	background-color: grey;
+}
+
+/* Citacie */
+blockquote {
+	quotes: "„" "“" "‚" "‘";
+	text-transform: uppercase;
+	font-family: Proxima Nova, Atrament;
+}
+
+figcaption {
+	font-weight: bold;
+}
+
+/* Paticka */
+footer {
+	width: 100%;
+    padding: 0px;
+
+    color: white;
+    text-align: center;  
+    font-size: 10px;
+    background-color: $darker_color;
+    background-image: radial-gradient(
+      $dark_color 0%,
+      $dark_color 50%,
+      transparent 80%,
+      transparent
+    );
+}
+
+/* CLASSES */
+.family-container {
+	width: 100%;
+	margin-top: 100px;
+	padding-bottom: 30px;
+
+	background-color: $darker_color;
+    background-image: radial-gradient(
+      $dark_color 0%,
+      $dark_color 50%,
+      transparent 80%,
+      transparent
+    );
+
+    h1 {
+    	color: $lightest_color;
+    }
+
+	.family-member-container {
+		height: 154px;
+		width: 100%;
+		margin: auto;
+		margin-top: 20px;	
+
+		border: 2px solid $grey_background;	
+		text-align: center;
+
+		img {
+			max-width: 150px;
+			max-height: 150px;
+
+			display: block;
+			float: left;
+
+			border-radius: 90px;
+		}
+
+		div {
+			width: calc(100% - 150px);
+			height: 100%;
+			float: left;
+			padding: 13px;
+
+			color: $darkest_color;
+			font-weight: bold;
+			font-size: 20px;
+			background-color: $grey_background;
+			text-align: center;
+		}
+	}
+}
+
+.ul-content {
+	margin-left: 20px;
+	padding: 20px 0;
+
+	li {
+		text-decoration: underline;
+	}
+}
+
+/* Image quotes */
+.img-quote-container {
+	width: 100%;
+	max-height: 500px;
+
+	position: relative;
+	margin-top: 100px;
+	margin-bottom: 100px;
+
+	text-align: center;
+	color: white;
+
+	img {
+		max-height: 500px;
+		width: 100%;
+		border-top: 10px solid $darker_color;
+		border-bottom: 10px solid $darker_color;
+
+	}
+
+	.img-quote-text {
+		padding: 10px;
+		background-color: $darker_color;
+		opacity: 0.8;
+
+		position: absolute;
+		top: 50%;
+		right: 0;	
+	}
+}
+
+.story-container {
+}
+
+.content {
+	width: 90%;
+	margin: auto;
+}
+
+/* Grid wrapper */
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: minmax(10px, auto);
+}
+
+/* Obsah */
+.box2 {
+	margin-top: 38px;
+	height: 100vh;
+
+	background-color: $darker_color;
+	background-image: radial-gradient(
+      $dark_color 0%,
+      $dark_color 50%,
+      transparent 80%,
+      transparent
+    );
+}
+
+.box2, .box3, .box4, .box5, .box6 {
+}
+
+/* Quotes */
+.quote {
+	max-width: 90%;
+	margin: auto;
+	padding: 20px 0;
+
+	background-color: $grey_background;
+	text-align: center;
+	color: $darkest_color;
+
+	background-image: radial-gradient(circle,
+      white 10%,
+      $darker_color 
+    );
+
+	border-radius: 5px;
+}
+
+/* Image center */
+.img-center {
+	max-height: 80%;
+	max-width: 100%;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+
+.img-in-text {
+	max-width: 100%;
+	max-height: 200px;
+	float: right;
+}
+
+.img-chris {
+	width: 200px;
+	float: right;
+
+	border-radius: 5px;
+}
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-height: 550px){
+	nav {
+		#nadpis {
+			display: none;
+		}
+	}
+}
+
+/* Minimalna sirka okna 600px */
+@media only screen and (min-width: 600px){
+	.content {
+		width: 80%;
+	}
+	/* Grid wrapper */
+	.wrapper {
+		grid-template-columns: 1fr 3fr;
+		grid-auto-rows: minmax(10px, auto);
+	}
+
+	.box1 {
+	  grid-column: 1;
+	  grid-row: 1;
+	}
+
+	.box2 {
+	  grid-column: 2;
+	  grid-row: 1;
+
+	  margin-top: 0;
+	}
+
+	.box3 {
+	  grid-column: 2;
+	  grid-row: 2;
+	}
+
+	.box4 {
+	  grid-column: 2;
+	  grid-row: 3;
+	}
+
+	.box5 {
+	  grid-column: 2;
+	  grid-row: 4;
+	}
+
+	.box6 {
+	  grid-column: 2;
+	  grid-row: 5;
+	}
+
+	/* Menu */
+	nav {
+		width: 25%;
+		height: 100%;
+		float: left;
+
+	    // a element
+		a {
+			display: block;
+			padding: 14px 16px;
+			z-index: 10;
+		}
+
+		// Logo
+	    #logo {
+	    	position: static;
+	    	margin: auto;
+	    	width: 80%;
+	    	height: auto;
+
+	    }
+
+	    // Nadpis
+	    #nadpis {
+			text-align: center;
+			margin-left: 0;	
+			font-size: 2em;
+	    }
+
+	    // Menu
+	    // Ikona
+	    a.navIcon {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: $lightest_color;
+			color: $dark_color;
+		}
+
+		// Linky
+		#navLinks {
+			display: block;
+
+			a {
+				font-size: 18px;
+			}
+		}
+	}
+
+	.img-quote-container {
+		overflow: hidden;
+		.img-quote-text {
+			padding: 40px;
+			background-color: $darker_color;
+			opacity: 0.8;
+			
+			position: absolute;
+			top: 35%;
+			right: 5%;	
+
+			overflow: hidden;
+		}
+	}
+
+	hr {
+		margin: 120px 0;
+	}
+}
+
+/* Minimalna sirka okna 1200px */
+@media only screen and (min-width: 1200px)
+{
+	.family-container {
+		float: left;
+
+		.family-member-container {
+			width: calc(50% - 20px);
+			margin-right: 20px;
+			float: left;
+
+			div {
+				height: 150px;
+				padding: 20px;
+			}
+		}
+	}
+}
